@@ -1,197 +1,147 @@
-<div align="center">
+# Lumina – AI-Powered Mental Health Companion
 
-<img src="https://img.shields.io/badge/Lumina-AI%20Mental%20Health%20Companion-blueviolet?style=for-the-badge&logo=heart&logoColor=white" alt="Lumina Banner"/>
+## Overview
 
-# 🌟 Lumina – AI-Powered Mental Health Companion
+Lumina is an AI-powered mental health companion designed to provide emotional support through personalized conversations, speech interaction, and voice-based communication. The system combines natural language processing, emotion detection, speech recognition, and voice synthesis to create a more engaging and empathetic user experience.
 
-> *"You're never alone when Lumina is here."*
-
-Lumina is an emotionally intelligent AI chatbot that provides personalized mental health support through relationship-based conversations, voice cloning, and expressive speech synthesis — designed to feel like talking to someone who truly knows you.
-
-[![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=flat-square&logo=python&logoColor=white)](https://python.org)
-[![Flask](https://img.shields.io/badge/Flask-Backend-000000?style=flat-square&logo=flask)](https://flask.palletsprojects.com)
-[![ElevenLabs](https://img.shields.io/badge/ElevenLabs-Voice%20AI-orange?style=flat-square)](https://elevenlabs.io)
-[![Whisper](https://img.shields.io/badge/OpenAI-Whisper-412991?style=flat-square&logo=openai&logoColor=white)](https://openai.com/whisper)
-
-</div>
+The application enables users to interact with an AI companion through both text and voice, making mental health support more accessible and user-friendly.
 
 ---
 
-## 📖 Table of Contents
+## Key Features
 
-- [About](#-about)
-- [Features](#-features)
-- [Tech Stack](#-tech-stack)
-- [Project Structure](#-project-structure)
-- [Setup Instructions](#-setup-instructions)
-- [Use Cases](#-use-cases)
-- [Future Improvements](#-future-improvements)
-- [Author](#-author)
+### Personalized Conversations
 
----
+* Relationship-based interaction modes (Parent, Friend, Mentor, etc.)
+* Context-aware responses
+* Personalized user addressing and conversational flow
 
-## 💬 About
+### Voice Interaction
 
-Lumina bridges the gap between technology and emotional well-being. Rather than a generic chatbot, Lumina lets users choose a **relationship persona** — a Mom, Dad, or Friend — and even **clone a real voice** using an uploaded audio sample. The result is a deeply personal companion that speaks to you the way the people you love do.
+* Speech-to-Text using OpenAI Whisper
+* Text-to-Speech response generation
+* Voice cloning support using ElevenLabs
+* Emotional speech synthesis for natural communication
 
-Built for students, individuals managing stress, and anyone who needs a safe, judgment-free space to be heard.
+### Emotion-Aware Support
 
----
+* Emotion detection from user inputs
+* Adaptive responses based on emotional state
+* Positive affirmations and supportive conversations
 
-## ✨ Features
+### Wellness Activities
 
-### 🧠 Relationship-Based AI
-| Persona | Personalities Available |
-|---|---|
-| Mom | Calm, Fun, Strict, Emotional |
-| Dad | Supportive, Motivational, Wise |
-| Friend | Cheerful, Chill, Empathetic |
-
-- Custom **nickname support** — Lumina addresses you the way you want
-- Context-aware responses tailored to the chosen relationship
-
-### 🎙️ Voice & Speech
-- **Voice Cloning** using uploaded audio samples via ElevenLabs
-- **Text-to-Speech** with emotional tone using SSML
-- **Static Indian voice fallback** for users without voice samples
-- **Speech-to-Text** powered by OpenAI Whisper
-
-### 🌐 Language Support
-- English & Hindi (regional language expansion planned)
-
-### 🧘 Therapy & Mood Booster Section
-- 😄 Jokes & Fun Therapy
-- 🎵 Music Therapy
-- 💬 Positive Affirmations
-- 🌬️ Breathing & Guided Exercises
-- 📖 Motivational Quotes & Stories
+* Motivational quotes
+* Music recommendations
+* Stress-relief and relaxation exercises
+* Interactive mood-enhancement activities
 
 ---
 
-## 🛠 Tech Stack
+## Technology Stack
 
-| Layer | Technology |
-|---|---|
-| **Frontend** | HTML, CSS, JavaScript |
-| **Backend** | Python (Flask) |
-| **LLM** | Gemma 3 |
-| **Speech-to-Text** | OpenAI Whisper |
-| **Text-to-Speech & Voice Cloning** | ElevenLabs |
-| **Emotion Detection** | Custom Emotion Detection Model |
+| Category           | Technologies                    |
+| ------------------ | ------------------------------- |
+| Frontend           | HTML, CSS, JavaScript           |
+| Backend            | Python, Flask                   |
+| AI Model           | Gemma 3                         |
+| Speech Recognition | OpenAI Whisper                  |
+| Voice Synthesis    | ElevenLabs                      |
+| Emotion Analysis   | Custom Emotion Detection Module |
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
-```
+```text
 mental_health_chatbot/
 │
-├── app.py                  # Main Flask application entry point
-├── main.py                 # Core logic and routing
-│
-├── chatbot/                # Chatbot logic, persona handling, response generation
-├── models/                 # Emotion detection and ML models
-│
-├── static/                 # Frontend assets (CSS, JS, images)
-├── templates/              # HTML templates (Jinja2)
-├── uploads/                # User-uploaded voice samples
-│
-├── voice_generator.py      # Text-to-Speech with emotional SSML
-├── voice_cloning.py        # ElevenLabs voice cloning integration
-│
-└── .env                    # Environment variables (API keys)
+├── app.py
+├── main.py
+├── chatbot/
+├── models/
+├── templates/
+├── uploads/
+└── README.md
 ```
 
 ---
 
-## ⚙️ Setup Instructions
+## Installation
 
-### Prerequisites
-
-- Python 3.10+
-- pip
-- An [ElevenLabs](https://elevenlabs.io) account (for TTS & voice cloning)
-- An [OpenAI](https://platform.openai.com) account (for Whisper STT)
-
----
-
-### 1. Clone the Repository
+### Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/lumina.git
-cd lumina
+git clone <repository-url>
+cd AI-Powered-Mental-Health-Chatbot
 ```
 
-### 2. Create a Virtual Environment
+### Create Virtual Environment
 
 ```bash
 python -m venv venv
-source venv/bin/activate      # On Windows: venv\Scripts\activate
 ```
 
-### 3. Install Dependencies
+### Activate Environment
+
+Windows:
+
+```bash
+venv\Scripts\activate
+```
+
+Linux/macOS:
+
+```bash
+source venv/bin/activate
+```
+
+### Install Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### 4. Configure Environment Variables
-
-Create a `.env` file in the root directory:
-
-```env
-ELEVEN_API_KEY=your_elevenlabs_api_key
-OPENAI_API_KEY=your_openai_api_key
-```
-
-> ⚠️ Never commit your `.env` file. It is already listed in `.gitignore`.
-
-### 5. Run the Application
+### Run the Application
 
 ```bash
 python app.py
 ```
 
-Open your browser and navigate to:
+Open:
 
-```
+```text
 http://localhost:5000
 ```
 
 ---
 
-## 💡 Use Cases
+## Applications
 
-- 🎓 **Students** dealing with academic pressure and loneliness
-- 🧑‍💼 **Professionals** experiencing workplace stress
-- 💔 **Individuals** going through difficult emotional phases
-- 🏥 **Healthcare + AI Hackathon** use case demonstrations
-- 🌙 **Anyone** who needs a calm, non-judgmental presence at any hour
-
----
-
-## 🔮 Future Improvements
-
-- [ ] User authentication & secure profiles
-- [ ] Conversation history & session storage
-- [ ] Emotional progress tracking over time
-- [ ] Expanded regional language support (Tamil, Telugu, Bengali, etc.)
-- [ ] Mobile application (Android & iOS)
-- [ ] Integration with wearable devices for real-time mood sensing
+* Mental health support systems
+* Student wellness platforms
+* AI companionship applications
+* Emotional support assistants
+* Healthcare and AI innovation projects
 
 ---
 
-## 👨‍💻 Author
+## Future Enhancements
 
-**Nithish**
-B.Tech – Information Technology | Expected Graduation: 2027
-
-> *Built with empathy, powered by AI.*
+* User authentication and profiles
+* Conversation history management
+* Multi-language support
+* Mobile application development
+* Advanced emotion tracking and analytics
 
 ---
 
-<div align="center">
+## Author
 
-⭐ If Lumina helped or inspired you, consider giving this repo a star!
+**Vyshnavi Kandasani**
 
-</div>
+B.Tech – Information Technology
+
+---
+
+*Empowering emotional well-being through AI-driven conversations and voice technology.*
